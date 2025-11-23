@@ -66,7 +66,7 @@ const TechArchitecture: React.FC = () => {
           {/* Visualization */}
           <div className="relative h-[400px] w-full bg-orienta-card border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-purple-900/10">
             <div className="absolute top-4 left-4 text-xs font-mono text-gray-500">
-              LIVE_INFERENCE_VISUALIZATION // LAYER_0 -> LAYER_3
+              LIVE_INFERENCE_VISUALIZATION // LAYER_0 --&gt; LAYER_3
             </div>
             
             <svg className="w-full h-full" viewBox="0 0 400 300">
