@@ -1,81 +1,166 @@
 import React from 'react';
 import { SectionId } from '../types';
+import { Check, X, GitBranch, List, Zap, BrainCircuit, Target, Layers } from 'lucide-react';
 
 const ProductDemo: React.FC = () => {
   return (
-    <section id={SectionId.DEMO} className="py-24 bg-orienta-dark relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Intuitive <span className="text-gradient-accent">Workflow</span></h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            From a conversational ice-breaker to a dynamic "Career Path Tree". We reduce anxiety through clarity.
+    <section id={SectionId.DEMO} className="py-24 bg-orienta-dark relative overflow-hidden">
+      {/* Ambient Background */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Beyond <span className="text-gradient-accent">Playful Exploration</span>
+          </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+            Standard tools like <em>Google Career Dreamer</em> offer a playful start. 
+            <strong> Orienta</strong> offers a strategic roadmap. We don't just match keywords; we simulate futures.
           </p>
         </div>
 
-        {/* Abstract representation of UI screens using CSS shapes to keep it code-only but pretty */}
-        <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-            
-            {/* Screen 1: Chat */}
-            <div className="w-full max-w-sm h-[500px] bg-orienta-card border border-white/10 rounded-2xl p-4 flex flex-col shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
-                <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-gray-500 ml-auto">Onboarding</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          
+          {/* Competitor Card (The Standard) */}
+          <div className="relative group p-1 rounded-2xl bg-gradient-to-b from-white/5 to-transparent">
+            <div className="absolute inset-0 bg-gray-900/50 backdrop-blur-sm rounded-2xl"></div>
+            <div className="relative h-full bg-orienta-card border border-white/5 rounded-xl p-8 flex flex-col grayscale transition-all duration-500 hover:grayscale-0">
+              
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-3 bg-gray-800 rounded-lg">
+                   <List className="w-6 h-6 text-gray-400" />
                 </div>
-                <div className="space-y-3 flex-1 overflow-hidden">
-                    <div className="bg-white/5 p-3 rounded-lg rounded-tl-none max-w-[80%] text-xs text-gray-300">
-                        Hi! I'm Orienta. What interests you lately?
-                    </div>
-                    <div className="bg-orienta-accent/20 p-3 rounded-lg rounded-tr-none max-w-[80%] ml-auto text-xs text-white">
-                        I like drawing but I also love math...
-                    </div>
-                     <div className="bg-white/5 p-3 rounded-lg rounded-tl-none max-w-[80%] text-xs text-gray-300">
-                        Interesting combination. Let's explore Creative Coding or Architecture.
-                    </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-300">Standard Career AI</h3>
+                  <p className="text-xs uppercase tracking-widest text-gray-500">e.g. Career Dreamer</p>
                 </div>
-                <div className="mt-4 h-10 bg-white/5 rounded-full"></div>
-            </div>
+              </div>
 
-            {/* Screen 2: Tree Result */}
-            <div className="w-full max-w-md h-[550px] bg-orienta-black border border-orienta-accent/30 rounded-2xl p-4 flex flex-col shadow-2xl shadow-orienta-accent/10 z-10 transform hover:scale-105 transition-transform duration-500">
-                <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
-                     <span className="text-xs font-mono text-orienta-accent">ANALYSIS_COMPLETE</span>
-                </div>
-                <div className="flex-1 relative">
-                    {/* Fake Tree UI */}
-                    <div className="absolute top-10 left-1/2 -translate-x-1/2 w-32 h-10 bg-white/10 rounded border border-white/20 flex items-center justify-center text-xs">Interest: Math + Art</div>
-                    <div className="absolute top-20 left-1/2 w-[1px] h-10 bg-white/10"></div>
-                    
-                    <div className="absolute top-32 left-10 w-24 h-24 bg-blue-900/20 rounded border border-blue-500/50 flex flex-col items-center justify-center text-xs p-2 text-center">
-                        <span className="text-blue-400 font-bold mb-1">Architecture</span>
-                        <span className="text-[10px] text-gray-500">Structural Design</span>
-                    </div>
-                     <div className="absolute top-32 right-10 w-24 h-24 bg-purple-900/20 rounded border border-purple-500/50 flex flex-col items-center justify-center text-xs p-2 text-center">
-                        <span className="text-purple-400 font-bold mb-1">Creative Tech</span>
-                        <span className="text-[10px] text-gray-500">WebGL Developer</span>
-                    </div>
-                </div>
-            </div>
+              {/* Visual Metaphor: Flat List */}
+              <div className="mb-8 space-y-3 opacity-50">
+                 <div className="h-12 w-full bg-gray-800 rounded border border-gray-700 flex items-center px-4">
+                    <span className="w-2 h-2 rounded-full bg-gray-500 mr-3"></span>
+                    <div className="h-2 w-24 bg-gray-600 rounded"></div>
+                 </div>
+                 <div className="h-12 w-full bg-gray-800 rounded border border-gray-700 flex items-center px-4">
+                    <span className="w-2 h-2 rounded-full bg-gray-500 mr-3"></span>
+                    <div className="h-2 w-32 bg-gray-600 rounded"></div>
+                 </div>
+                 <div className="h-12 w-full bg-gray-800 rounded border border-gray-700 flex items-center px-4">
+                    <span className="w-2 h-2 rounded-full bg-gray-500 mr-3"></span>
+                    <div className="h-2 w-20 bg-gray-600 rounded"></div>
+                 </div>
+              </div>
 
-             {/* Screen 3: Details */}
-             <div className="w-full max-w-sm h-[500px] bg-orienta-card border border-white/10 rounded-2xl p-4 flex flex-col shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
-                <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
-                     <span className="text-xs text-gray-500">Detailed Roadmap</span>
+              <div className="space-y-4 mt-auto">
+                <div className="flex items-start gap-3 text-gray-400">
+                   <X className="w-5 h-5 text-red-900/50 shrink-0 mt-0.5" />
+                   <p className="text-sm"><strong>Surface Level:</strong> Relies on simple keyword matching (e.g., "Art" = "Painter").</p>
                 </div>
-                <div className="space-y-4">
-                    <div className="h-40 bg-white/5 rounded-lg w-full"></div>
-                    <div className="space-y-2">
-                        <div className="h-4 bg-white/10 rounded w-3/4"></div>
-                        <div className="h-4 bg-white/10 rounded w-1/2"></div>
-                    </div>
-                     <div className="h-20 bg-orienta-accent/10 border border-orienta-accent/20 rounded-lg w-full flex items-center justify-center">
-                        <span className="text-orienta-accent text-sm">Future Projection: +15% Growth</span>
-                     </div>
+                <div className="flex items-start gap-3 text-gray-400">
+                   <X className="w-5 h-5 text-red-900/50 shrink-0 mt-0.5" />
+                   <p className="text-sm"><strong>Static Snapshots:</strong> Provides job titles without context or growth paths.</p>
                 </div>
-            </div>
+                <div className="flex items-start gap-3 text-gray-400">
+                   <X className="w-5 h-5 text-red-900/50 shrink-0 mt-0.5" />
+                   <p className="text-sm"><strong>Single-Step:</strong> Input → Output. No intermediate reasoning.</p>
+                </div>
+              </div>
 
+            </div>
+          </div>
+
+          {/* Orienta Card (The Advantage) */}
+          <div className="relative group p-1 rounded-2xl bg-gradient-to-b from-blue-500 to-purple-600 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
+            <div className="relative h-full bg-orienta-black rounded-xl p-8 flex flex-col overflow-hidden">
+              
+              {/* Background Grid */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+
+              <div className="relative z-10 flex items-center gap-4 mb-8">
+                <div className="p-3 bg-blue-600/20 border border-blue-500/30 rounded-lg">
+                   <GitBranch className="w-6 h-6 text-blue-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">The Orienta Engine</h3>
+                  <p className="text-xs uppercase tracking-widest text-blue-400">Multi-Agent System</p>
+                </div>
+              </div>
+
+              {/* Visual Metaphor: Tree/Graph */}
+              <div className="relative z-10 mb-8 h-48 flex items-center justify-center">
+                 <div className="absolute w-1 h-24 bg-gradient-to-b from-blue-500 to-purple-500 left-8 top-12 rounded-full opacity-20"></div>
+                 
+                 {/* Node 1 */}
+                 <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                    <div className="w-12 h-12 rounded-full border border-blue-500 bg-blue-900/20 flex items-center justify-center animate-pulse">
+                        <Target className="w-5 h-5 text-blue-400" />
+                    </div>
+                 </div>
+                 
+                 {/* Connecting Line */}
+                 <div className="absolute left-12 top-1/2 w-16 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500"></div>
+
+                 {/* Node 2 */}
+                 <div className="absolute left-28 top-1/2 -translate-y-1/2">
+                    <div className="w-12 h-12 rounded-full border border-purple-500 bg-purple-900/20 flex items-center justify-center">
+                        <BrainCircuit className="w-5 h-5 text-purple-400" />
+                    </div>
+                 </div>
+
+                 {/* Branches */}
+                 <div className="absolute left-40 top-1/2 -translate-y-1/2 flex flex-col gap-6">
+                    <div className="flex items-center gap-2">
+                         <div className="w-8 h-[1px] bg-purple-500"></div>
+                         <div className="px-3 py-1 rounded-full border border-white/20 bg-white/5 text-[10px] text-white">Future A</div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                         <div className="w-8 h-[1px] bg-purple-500"></div>
+                         <div className="px-3 py-1 rounded-full border border-white/20 bg-white/5 text-[10px] text-white">Future B</div>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="relative z-10 space-y-4 mt-auto">
+                <div className="flex items-start gap-3">
+                   <div className="mt-0.5 p-0.5 bg-green-500/20 rounded-full">
+                     <Check className="w-4 h-4 text-green-400" />
+                   </div>
+                   <p className="text-sm text-gray-300"><strong>Deep Reasoning:</strong> Uses Chain-of-Thought to understand <em>why</em> an interest matters (e.g., "Art" + "Logic" = "UX Architecture").</p>
+                </div>
+                <div className="flex items-start gap-3">
+                   <div className="mt-0.5 p-0.5 bg-green-500/20 rounded-full">
+                     <Check className="w-4 h-4 text-green-400" />
+                   </div>
+                   <p className="text-sm text-gray-300"><strong>Temporal Mapping:</strong> We don't just show the job; we show the <em>trajectory</em> (Major → Career → Industry Leader).</p>
+                </div>
+                <div className="flex items-start gap-3">
+                   <div className="mt-0.5 p-0.5 bg-green-500/20 rounded-full">
+                     <Check className="w-4 h-4 text-green-400" />
+                   </div>
+                   <p className="text-sm text-gray-300"><strong>Agentic Interoperability:</strong> Three specialized agents debate and refine the best path for you.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
+
+        {/* Bottom Banner */}
+        <div className="mt-16 p-8 rounded-2xl bg-white/5 border border-white/10 text-center relative overflow-hidden">
+             <div className="relative z-10">
+                 <h4 className="text-2xl font-bold text-white mb-2">Stop guessing. Start mapping.</h4>
+                 <p className="text-gray-400 mb-6">See why 94% of students prefer a roadmap over a list.</p>
+                 <button 
+                    onClick={() => document.getElementById(SectionId.TRY)?.scrollIntoView({behavior: 'smooth'})}
+                    className="px-6 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
+                 >
+                    Try the Orienta Difference
+                 </button>
+             </div>
+             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-blue-500/10 to-transparent transform -skew-x-12"></div>
+        </div>
+
       </div>
     </section>
   );
