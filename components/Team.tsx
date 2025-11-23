@@ -25,7 +25,7 @@ const Team: React.FC = () => {
         </div>
         
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
-          <p>© 2024 Orienta AI. All rights reserved.</p>
+          <p>© 2025 Orienta AI. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
